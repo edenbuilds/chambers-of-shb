@@ -1,22 +1,55 @@
 # Chambers of SHB
 
-**Chambers of SHB by edenbuilds** is a combined legal-assistant repo that pulls together:
+Indian legal research, drafting, court-data access, and contract triage in one
+portable repo.
 
-- the drafting and routing system from `arya-ai`
-- the Indian court-data workflow from `bharat-courts`
-- the contract-scanning and legal-aid orientation ideas from Legal-Lens Pro
+Built and maintained by `edenbuilds`.
 
-It is designed to be dropped into Claude Code, Claude Desktop, Codex, Gemini, or any other assistant that can read a prompt pack, a skill bundle, or a local MCP server.
+## What It Does
+
+Chambers of SHB combines three legal workflows into one repository:
+
+- Indian legal drafting and routing
+- Indian court-data lookup and research
+- Fast contract review and risk triage
+
+It is designed to work as a local prompt pack, skill bundle, and MCP-backed
+assistant resource for:
+
+- Claude Code
+- Claude Desktop
+- Codex
+- Gemini
+- ChatGPT and other chat apps
+
+## Why It Is Useful
+
+This repo reduces the usual friction of legal assistant setup:
+
+- one place for drafting rules, court data, and research workflows
+- one repo that can be loaded into multiple assistants
+- plain-language setup instructions for non-technical users
+- reusable legal workflows instead of one-off prompts
+- court-data support that can handle judgments, case status, orders, and cause
+  lists when paired with `bharat-courts`
+
+For legal work, the main value is consistency: the assistant follows the same
+routing, citation, and verification rules every time instead of improvising.
 
 ## What Is Included
 
-- `skills/chambers-shb-orchestrator/` - primary routing and safety rules for Indian legal work.
-- `skills/bharat-courts/` - court-data skill for judgments, case status, orders, and cause lists.
-- `skills/legal-lens-contract-review/` - contract risk triage, plain-language summaries, and legal-aid orientation.
-- `commands/`, `agents/`, and `protocols/` - the broader drafting and research library inherited from the original legal pack.
-- `server/main.py` - local MCP server for protocol search, prompt retrieval, and drafting helpers.
+- `skills/chambers-shb-orchestrator/` - primary routing and safety rules for
+  Indian legal work.
+- `skills/bharat-courts/` - court-data skill for judgments, case status,
+  orders, cause lists, and historical archive queries.
+- `skills/legal-lens-contract-review/` - contract risk review, plain-English
+  summaries, and legal-aid orientation.
+- `agents/`, `commands/`, and `protocols/` - the broader Indian-law drafting and
+  research library.
+- `server/main.py` - local MCP server for search, prompt retrieval, and
+  drafting helpers.
 
-## Fast Start
+## Quick Start
 
 ```bash
 git clone https://github.com/edenbuilds/chambers-of-shb.git
@@ -24,77 +57,140 @@ cd chambers-of-shb
 uv sync
 ```
 
-If you want live and historical Indian court data, install the upstream court engine too:
+If you want live and historical Indian court data, install the court engine:
 
 ```bash
 pip install "bharat-courts[ocr,archive]"
 ```
 
-That gives the court skill access to live eCourts portals plus the historical archive.
+## How To Use It
 
-## Add It To Your Assistant
+### 1. Open the repo in your assistant workspace
+
+Point your assistant at the repo root.
+
+### 2. Read the main routing skill first
+
+Start with:
+
+```text
+skills/chambers-shb-orchestrator/SKILL.md
+```
+
+That file tells the assistant how to route Indian-law requests to the correct
+agent, command, skill, protocol, or local tool.
+
+### 3. Use the court-data skill when you need Indian case research
+
+Read:
+
+```text
+skills/bharat-courts/SKILL.md
+```
+
+Use it for:
+
+- finding judgments
+- checking live case status
+- downloading orders
+- getting cause lists
+- querying the historical archive
+
+### 4. Use the contract-review skill for quick triage
+
+Read:
+
+```text
+skills/legal-lens-contract-review/SKILL.md
+```
+
+Use it for:
+
+- contract red-flag review
+- plain-English summaries
+- deadline extraction
+- jurisdiction and forum checks
+- missing clause checks
+
+### 5. Use the local MCP server when your assistant supports it
+
+The repo includes `server/main.py` and `.mcp.json`.
+
+That gives compatible assistants access to local tools for:
+
+- protocol search
+- command retrieval
+- specialist agent lookup
+- drafting workflows
+
+## Assistant-Specific Notes
 
 ### Claude Code
 
-Open the repo in your work folder and point Claude Code at the repo root. Start with:
-
-```text
-Read `skills/chambers-shb-orchestrator/SKILL.md` first.
-```
-
-If you also want the court-data helper in a separate project folder, install the upstream skill bundle with:
-
-```bash
-bharat-courts install-skills
-```
+Load the repo, then tell Claude to read `skills/chambers-shb-orchestrator/SKILL.md`.
+For court data, also load `skills/bharat-courts/SKILL.md`.
 
 ### Claude Desktop
 
-Use the repo as your local skill and MCP source:
-
-```text
-Read `CLAUDE.md`
-```
-
-Then add the local MCP server from `server/main.py` or use the repo paths directly in the Skills setting.
+Use `CLAUDE.md` as the entry file and connect the repo’s local MCP/server
+configuration if needed.
 
 ### Codex
 
-Codex can read the repo as a local plugin folder because it includes `.codex-plugin/plugin.json`.
+This repo includes `.codex-plugin/plugin.json`, so it can be used as a local
+plugin folder.
 
-Open with:
+### Gemini
 
-```text
-Read `skills/chambers-shb-orchestrator/SKILL.md`
-```
+Use `GEMINI.md` as the entry file and treat the repo as your local legal
+reference base.
 
 ### ChatGPT and other chat apps
 
 The most reliable pattern is:
 
-1. run the local tool or MCP server
-2. paste the JSON, draft, or extracted text into the chat
-3. ask the assistant to summarize, redline, or rewrite
+1. run the local tool or server
+2. copy the JSON, draft, or extracted text into the chat
+3. ask the assistant to summarize, compare, redline, or rewrite
 
-For court searches, the `bharat-courts` CLI plus pasted JSON is the safest path.
+## Example Prompts
 
-### Gemini
+```text
+Draft a legal notice for breach of contract from these facts.
+```
 
-Read `GEMINI.md` and use the repo as a prompt pack plus local reference base.
+```text
+Check limitation, jurisdiction, and maintainability for this dispute.
+```
 
-## Platform Guide
+```text
+Find the latest Supreme Court judgments on this topic.
+```
 
-For the full step-by-step install instructions, see [docs/install/README.md](docs/install/README.md).
+```text
+Review this contract for hidden risks and give me a plain-English summary.
+```
 
-## Why This Repo Exists
-
-edenbuilds wanted one public repository that:
-
-1. keeps the Indian-law drafting workflows in one place
-2. makes court-data access easy to add to Claude Code, Codex, ChatGPT, Gemini, and Claude
-3. keeps contract analysis, legal research, and local MCP support together
-4. is easy to publish as a separate public repo under the edenbuilds profile
+```text
+Show me the cause list for tomorrow and the latest status of this case.
+```
 
 ## Safety
 
-This repo is a legal drafting and research aid. It does not replace an advocate's judgment. Verify current statutes, court rules, fees, limitation, citations, and local filing practice before relying on any output.
+This repository is a legal drafting and research aid. It does not replace an
+advocate's judgment.
+
+Always verify:
+
+- current statutes and amendments
+- court rules and registry practice
+- limitation periods
+- citations
+- fees, affidavits, and annexures
+- filing requirements for the relevant forum
+
+## More Setup Notes
+
+For deeper installation instructions and platform-specific notes, see
+[docs/install/README.md](docs/install/README.md).
+
