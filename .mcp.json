@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "chambers-of-shb": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        ".",
+        "run",
+        "server/main.py"
+      ]
+    }
+  }
+}
