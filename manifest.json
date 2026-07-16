@@ -4,9 +4,9 @@
   "display_name": "Chambers of SHB - Indian Law Assistant",
   "version": "1.0.0",
   "description": "Local-first Chambers of SHB legal assistant for lawyers. Includes specialist agents, commands, protocol search, legal drafting templates, court-data guidance, and contract triage workflows.",
-  "long_description": "Chambers of SHB by Pragadish5207 combines Indian legal research, drafting, litigation strategy, company-law pleadings, limitation checks, RTI/writ/PIL support, court-data workflows, contract triage, and local document export helpers. It is designed to run as a prompt-pack in Claude Code, Codex, Cursor, Gemini CLI, and as a local MCP server wherever MCP is supported.",
+  "long_description": "Chambers of SHB by edenbuilds combines Indian legal research, drafting, litigation strategy, company-law pleadings, limitation checks, RTI/writ/PIL support, court-data workflows, contract triage, and local document export helpers. It is designed to run as a prompt-pack in Claude Code, Codex, Cursor, Gemini CLI, and as a local MCP server wherever MCP is supported.",
   "author": {
-    "name": "Pragadish5207"
+    "name": "edenbuilds"
   },
   "license": "MIT",
   "keywords": [

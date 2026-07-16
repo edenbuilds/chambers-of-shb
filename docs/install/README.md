@@ -1,11 +1,11 @@
 # Installation Guide
 
-Chambers of SHB by Pragadish5207 is designed to be easy to load into common assistant surfaces.
+Chambers of SHB by edenbuilds is designed to be easy to load into common assistant surfaces.
 
 ## 1. Local repo setup
 
 ```bash
-git clone https://github.com/pragadish5207/chambers-of-shb.git
+git clone https://github.com/edenbuilds/chambers-of-shb.git
 cd chambers-of-shb
 uv sync
 ```
@@ -72,11 +72,10 @@ Read `GEMINI.md` and use the repository as the prompt pack plus local reference 
 
 ## 7. Public repo publication
 
-If you want this as a public GitHub repository under `Pragadish5207`, create or push the GitHub repo at:
+If you want this as a public GitHub repository under `edenbuilds`, create or push the GitHub repo at:
 
 ```text
-https://github.com/pragadish5207/chambers-of-shb
+https://github.com/edenbuilds/chambers-of-shb
 ```
 
 The files in this repository are already branded for that destination.
-

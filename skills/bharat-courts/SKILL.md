@@ -3,7 +3,7 @@ name: bharat-courts
 description: Access Indian court data — find judgments, search cases, download orders, get cause lists, and query the historical archive (1950–present, 25 HCs + SCI). Use `Judgments().find(...)` as the default for "find a judgment" questions — it picks archive vs live for you. Fall back to portal-specific clients (`HCServicesClient`, `DistrictCourtClient`, etc.) only when you need a portal-only feature (cause list, live case status, district drill-down).
 ---
 
-> Bundled into Chambers of SHB by Pragadish5207 for court-data workflows across Claude Code, Codex, ChatGPT, Gemini, and Claude.
+> Bundled into Chambers of SHB by edenbuilds for court-data workflows across Claude Code, Codex, ChatGPT, Gemini, and Claude.
 
 # Indian Court Data with bharat-courts
 

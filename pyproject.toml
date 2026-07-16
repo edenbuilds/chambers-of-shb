@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "Chambers of SHB legal assistant repo for research, drafting, court data, and contract triage."
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Pragadish5207" }]
+authors = [{ name = "edenbuilds" }]
 dependencies = ["mcp[cli]>=1.0.0"]
 
 [build-system]

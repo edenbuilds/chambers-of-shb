@@ -1,6 +1,6 @@
 # Chambers of SHB
 
-**Chambers of SHB by Pragadish5207** is a combined legal-assistant repo that pulls together:
+**Chambers of SHB by edenbuilds** is a combined legal-assistant repo that pulls together:
 
 - the drafting and routing system from `arya-ai`
 - the Indian court-data workflow from `bharat-courts`
@@ -19,7 +19,7 @@ It is designed to be dropped into Claude Code, Claude Desktop, Codex, Gemini, or
 ## Fast Start
 
 ```bash
-git clone https://github.com/pragadish5207/chambers-of-shb.git
+git clone https://github.com/edenbuilds/chambers-of-shb.git
 cd chambers-of-shb
 uv sync
 ```
@@ -88,14 +88,13 @@ For the full step-by-step install instructions, see [docs/install/README.md](doc
 
 ## Why This Repo Exists
 
-Pragadish5207 wanted one public repository that:
+edenbuilds wanted one public repository that:
 
 1. keeps the Indian-law drafting workflows in one place
 2. makes court-data access easy to add to Claude Code, Codex, ChatGPT, Gemini, and Claude
 3. keeps contract analysis, legal research, and local MCP support together
-4. is easy to publish as a separate public repo under the Pragadish5207 profile
+4. is easy to publish as a separate public repo under the edenbuilds profile
 
 ## Safety
 
 This repo is a legal drafting and research aid. It does not replace an advocate's judgment. Verify current statutes, court rules, fees, limitation, citations, and local filing practice before relying on any output.
-
